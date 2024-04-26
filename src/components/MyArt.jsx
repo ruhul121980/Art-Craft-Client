@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Register() {
+export default function MyArt() {
   return (
     <div>
-      Register Page
+      My Art and Craft page
     </div>
   )
 }
