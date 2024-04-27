@@ -1,3 +1,6 @@
+// user:ruhul121980@gmail.com pw:ruhul121980
+
+
 import React from 'react';
 import ReactDOM from 'react-dom'; 
 
@@ -17,6 +20,8 @@ import NotFound from './components/NotFound';
 import AllArt from './components/AllArt';
 import AddCraft from './components/AddCraft';
 import MyArt from './components/MyArt';
+import AllArtDetails from './components/AllArtDetails';
+import { getMultiFactorResolver } from 'firebase/auth';
 
 const router = createBrowserRouter([
   {
@@ -47,6 +52,14 @@ const router = createBrowserRouter([
         path:'/allArt',
         element:<AllArt></AllArt>,
         loader:()=>fetch('http://localhost:5000/addCraft')
+      },
+      {
+        path:'allArtDetails/:id',
+        
+        element:<PrivateRoute><AllArtDetails></AllArtDetails></PrivateRoute>,
+        loader:()=>fetch('http://localhost:5000/addCraft')
+
+
       },
       {
         path: '*',
