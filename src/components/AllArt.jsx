@@ -1,9 +1,14 @@
-import React from 'react'
+
+import { useLoaderData } from 'react-router-dom'
+import AllArtTable from './AllArtTable';
 
 export default function AllArt() {
+  const allArt=useLoaderData();
   return (
     <div>
-      <h2>All Art & craft Items,</h2>
+      {
+        allArt.map(Art=> <AllArtTable key={Art._id} Art={Art}> </AllArtTable>)
+      }
     </div>
   )
 }
