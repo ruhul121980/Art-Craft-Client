@@ -1,6 +1,6 @@
 import React from "react";
 import Slid from "./Slid"; 
-import Estate from "./Estate";
+import CraftItemSection from "./CraftItemSection";
 
 
 export default function Home() {
@@ -8,7 +8,8 @@ export default function Home() {
     <div>
       <h2 className="text-2xl"></h2>
       <Slid />
-      <Estate></Estate>
+      <CraftItemSection></CraftItemSection>
+      
       
     </div>
   );
