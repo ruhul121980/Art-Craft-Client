@@ -23,7 +23,7 @@ export default function Navbar() {
                     <>
                        
                         <li><NavLink to="/addCraft" activeClassName="font-bold">Add Craft Item</NavLink></li>
-                        <li> <Link to="/myARt" className="btn btn-sm ">My Art&Craft List</Link></li>
+                        <li> <Link to={`/myARt` }className="btn btn-sm ">My Art&Craft List</Link></li>
                     </>
                 )
             }

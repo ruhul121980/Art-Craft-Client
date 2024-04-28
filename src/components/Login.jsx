@@ -24,7 +24,7 @@ export default function Login() {
           Swal.fire({
             icon: 'error',
             title: 'Oops...',
-            text: 'Incorrect password!',
+            text: 'Incorrect email or password!',
           });
         });
     };
