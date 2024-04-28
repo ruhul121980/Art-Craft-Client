@@ -1,4 +1,5 @@
 // user:ruhul121980@gmail.com pw:ruhul121980
+// user:amin121980@gmail.com pw:amin121980
 
 
 import React from 'react';
@@ -22,6 +23,7 @@ import AddCraft from './components/AddCraft';
 import MyArt from './components/MyArt';
 import AllArtDetails from './components/AllArtDetails';
 import { getMultiFactorResolver } from 'firebase/auth';
+import Update from './components/Update';
 
 const router = createBrowserRouter([
   {
@@ -61,6 +63,11 @@ const router = createBrowserRouter([
         loader:()=>fetch('http://localhost:5000/addCraft')
 
 
+      },
+      {
+        path:'/update/:id',
+        element:<Update></Update>,
+        loader:({params})=>fetch(`http://localhost:5000/addCraft/${params.id}`)
       },
       {
         path: '*',
