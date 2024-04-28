@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Navigate, useLoaderData } from 'react-router-dom';
+import { useNavigate, useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
 export default function Update() {
+    const navigate = useNavigate();
     const loaderUser = useLoaderData();
     const [formData, setFormData] = useState(loaderUser);
     const handleSubmit = (e) => {
@@ -27,7 +28,7 @@ export default function Update() {
                             icon: 'success',
                             confirmButtonText: 'Cool'
                         });
-                        Navigate
+                        navigate('/myArt');
 
                 }
             });
