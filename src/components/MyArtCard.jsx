@@ -46,7 +46,7 @@ const MyArtCard = ({ data }) => {
         <h2 className="card-title text-lg font-semibold">{itemName}</h2>
         <p className="text-gray-600">Price: ${price}</p>
         <p className="text-gray-600">Rating: {rating}</p>
-        <p className="text-gray-600">Customization: {customization ? 'Yes' : 'No'}</p>
+        <p className="text-gray-600">Customization: {customization}</p>
         <p className="text-gray-600">Stock Status: {stockStatus}</p>
         <div className="flex justify-between mt-4">
           <div>

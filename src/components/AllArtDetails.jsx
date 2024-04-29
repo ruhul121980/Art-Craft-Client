@@ -6,7 +6,7 @@ export default function AllArtDetails() {
   const Art = Arts.find(Art => Art._id === id);
 
   if (!Art) {
-    return <div>Loading...</div>; // Add loading state if necessary
+    return <div>Loading...</div>; 
   }
 
   const {

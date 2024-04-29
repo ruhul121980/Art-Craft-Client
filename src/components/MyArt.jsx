@@ -6,23 +6,45 @@ import MyArtCard from './MyArtCard';
 const MyArt = () => {
   const { user } = useContext(AuthContext);
   const alldata = useLoaderData();
-  console.log(alldata)
   const email = user.email;
+  const [customizationFilter, setCustomizationFilter] = useState('All'); // State to track the selected customization filter
   const [renderedCards, setRenderedCards] = useState([]);
 
+  // Filter data based on customization and user email
   useEffect(() => {
-    const cards = alldata.map(data => {
-      if (data.userEmail === email) {
-        return <MyArtCard key={data._id} data={data} />;
+    const filteredData = alldata.filter(data => {
+      if (customizationFilter === 'All') {
+        return data.userEmail === email;
+      } else {
+        return data.userEmail === email && data.customization === customizationFilter;
       }
     });
+
+    const cards = filteredData.map(data => (
+      <MyArtCard key={data._id} data={data} />
+    ));
+    
     setRenderedCards(cards);
-  }, [alldata, email]);
+  }, [alldata, email, customizationFilter]);
+
+  // Handler function to update the filter value
+  const handleFilterChange = (e) => {
+    setCustomizationFilter(e.target.value);
+  };
 
   return (
-    <div className='grid grid-cols-3'>
-    
-      {renderedCards}
+    <div>
+      <div className="mb-4">
+        <label htmlFor="customizationFilter" className="block mb-1">Filter by Customization:</label>
+        <select id="customizationFilter" name="customizationFilter" value={customizationFilter} onChange={handleFilterChange} className="w-full px-4 py-2 rounded border border-gray-300 focus:outline-none focus:border-blue-500">
+          <option value="All">All</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+      <div className='grid grid-cols-3'>
+        {renderedCards}
+      </div>
     </div>
   );
 };

@@ -26,6 +26,7 @@ import { getMultiFactorResolver } from 'firebase/auth';
 import Update from './components/Update';
 import CraftItemSection from './components/CraftItemSection';
 import CraftItemDetails from './components/CraftItemDetails';
+import ShowCategory from './components/ShowCategory';
 
 const router = createBrowserRouter([
   {
@@ -35,7 +36,8 @@ const router = createBrowserRouter([
       {
         path:'/',
         element:<Home></Home>,
-        loader:()=>fetch('http://localhost:5000/addCraft')
+        loader:()=>fetch('http://localhost:5000/addCraft'),
+        
       },
       {
         path:'/login',
@@ -73,6 +75,11 @@ const router = createBrowserRouter([
         loader:()=>fetch('http://localhost:5000/addCraft')
 
 
+      },
+      {
+        path:'/showCategory/:sub',
+        element:<ShowCategory></ShowCategory>,
+        loader:()=>fetch('http://localhost:5000/addCraft')
       },
       {
         path:'/update/:id',

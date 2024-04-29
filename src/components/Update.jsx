@@ -42,7 +42,7 @@ export default function Update() {
 
     return (
         <div className="container mx-auto bg-gray-100 p-6">
-            <h2 className="text-2xl font-semibold mb-4">Add Craft Item</h2>
+            <h2 className="text-2xl font-semibold mb-4">Update Craft Item</h2>
             <form onSubmit={handleSubmit} className="max-w-lg mx-auto">
                 <div className="mb-4">
                     <label htmlFor="image" className="block mb-1">Image (URL)</label>
@@ -81,7 +81,7 @@ export default function Update() {
                     <input type="text" id="stockStatus" name="stockStatus" defaultValue={formData.stockStatus} onChange={handleChange} className="w-full px-4 py-2 rounded border border-gray-300 focus:outline-none focus:border-blue-500" required />
                 </div>
                 
-                <button type="submit" className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition duration-300">Add</button>
+                <button type="submit" className="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600 transition duration-300">Update</button>
             </form>
         </div>
     );
