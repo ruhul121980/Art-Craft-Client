@@ -22,11 +22,11 @@ import AllArt from './components/AllArt';
 import AddCraft from './components/AddCraft';
 import MyArt from './components/MyArt';
 import AllArtDetails from './components/AllArtDetails';
-import { getMultiFactorResolver } from 'firebase/auth';
 import Update from './components/Update';
 import CraftItemSection from './components/CraftItemSection';
 import CraftItemDetails from './components/CraftItemDetails';
 import ShowCategory from './components/ShowCategory';
+
 
 const router = createBrowserRouter([
   {
