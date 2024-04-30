@@ -15,27 +15,37 @@ const MyArtCard = ({ data }) => {
     stockStatus,
   } = data;
   
-  const handleDelete=(_id)=>{
-    console.log(_id);
-    fetch(`http://localhost:5000/addCraft/${_id}`,{
-      method:'DELETE'
-    })
-      .then(res=>res.json())
-      .then(data=>{
-        if(data.deletedCount>0){
-                     
-          Swal.fire({
-              title: 'Success',
-              text: 'Data Deleted successfully',
-              icon: 'success',
-              confirmButtonText: 'Cool'
-          });
-          navigate('/myArt');
+  const handleDelete = (_id) => {
+    Swal.fire({
+        title: 'Are you sure?',
+        text: 'You will not be able to recover this item!',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Yes, delete it!',
+        cancelButtonText: 'No, cancel!'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            fetch(`http://localhost:5000/addCraft/${_id}`, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        Swal.fire({
+                            title: 'Success',
+                            text: 'Data Deleted successfully',
+                            icon: 'success',
+                            confirmButtonText: 'Cool'
+                        });
+                        navigate('/myArt');
+                    }
+                });
+        }
+    });
+};
 
-  }
-      })
-
-  }
 
   return (
     <div className="card card-compact bg-base-100 shadow-xl md:w-96 lg:w-80 xl:w-72">

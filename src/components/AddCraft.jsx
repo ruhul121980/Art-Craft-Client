@@ -2,8 +2,10 @@ import { useState } from 'react';
 import Swal from 'sweetalert2';
 import React, { useContext } from 'react';
 import { AuthContext } from '../providers/AuthProvider';
+import { useNavigate } from 'react-router-dom';
 
 export default function AddCraft() {
+    const navigate=useNavigate();
     const { user } = useContext(AuthContext);
     console.log(user)
     const [formData, setFormData] = useState({
@@ -71,7 +73,9 @@ export default function AddCraft() {
                             text: 'Data inserted successfully',
                             icon: 'success',
                             confirmButtonText: 'Cool'
+                            
                         });
+                        navigate('/');
                     }
                 })
             )
