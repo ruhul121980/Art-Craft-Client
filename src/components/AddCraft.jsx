@@ -29,7 +29,7 @@ export default function AddCraft() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Add your logic to handle form submission here
+       
 
         const image = formData.image;
         const itemName = formData.itemName;
