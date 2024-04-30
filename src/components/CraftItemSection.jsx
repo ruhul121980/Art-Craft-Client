@@ -6,6 +6,14 @@ export default function CraftItemSection() {
     const data = useLoaderData();
     console.log(data);
 
+    if (!data) {
+        return (
+            <div className="flex justify-center items-center h-64">
+                <span className="loading loading-spinner loading-lg"></span>
+            </div>
+        );
+    }
+
     const limitedData = data.slice(0, 6); // Get the first 6 items from data
 
     return (

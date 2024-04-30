@@ -1,28 +1,42 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
+import Swal from 'sweetalert2';
 
 export default function Register() {
     const { createUser } = useContext(AuthContext);
-    const navigate = useNavigate(); 
+    const navigate = useNavigate();
+    const [loading, setLoading] = useState(false);
 
-    const handleRegister = (e) => {
-      e.preventDefault();
-      const name = e.target.name.value;
-      const email = e.target.email.value;
-      const password = e.target.password.value;
-      const photoURL = e.target.imageUrl.value;
-      navigate('/');
-   
-      createUser(email, password, name, photoURL)
-          .then(result => {
-              console.log(result.user);
-          })
-          .catch(error => {
-              console.error(error);
-          });
-  };
-  
+    const handleRegister = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+        const name = e.target.name.value;
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        const photoURL = e.target.imageUrl.value;
+
+        try {
+            await createUser(email, password, name, photoURL);
+            Swal.fire({
+                icon: 'success',
+                title: 'Registration Successful!',
+                text: 'You have successfully registered.',
+                showConfirmButton: false,
+                timer: 1500
+            });
+            navigate('/');
+        } catch (error) {
+            console.error(error);
+            Swal.fire({
+                icon: 'error',
+                title: 'Registration Failed',
+                text: error.message || 'An error occurred during registration.'
+            });
+        } finally {
+            setLoading(false);
+        }
+    };
 
     return (
         <div className="hero min-h-screen bg-base-200">
@@ -60,7 +74,9 @@ export default function Register() {
                             <input type="text" placeholder="Image URL" name="imageUrl" required className="input input-bordered" />
                         </div>
                         <div className="form-control mt-6">
-                            <button type="submit" className="btn btn-primary">Register</button>
+                            <button type="submit" className={`btn btn-primary ${loading ? 'loading' : ''}`} disabled={loading}>
+                                {loading ? 'Registering...' : 'Register'}
+                            </button>
                         </div>
                     </form>
                 </div>
