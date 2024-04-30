@@ -57,7 +57,7 @@ export default function AddCraft() {
             userName
         };
         console.log(addCraftData);
-        fetch('http://localhost:5000/addCraft', {
+        fetch('https://server-side-ruby-one.vercel.app/addCraft', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -36,7 +36,7 @@ const router = createBrowserRouter([
       {
         path:'/',
         element:<Home></Home>,
-        loader:()=>fetch('http://localhost:5000/addCraft'),
+        loader:()=>fetch('https://server-side-ruby-one.vercel.app/addCraft'),
         
       },
       {
@@ -55,36 +55,36 @@ const router = createBrowserRouter([
         path:'/myArt',
         element:<PrivateRoute><MyArt></MyArt></PrivateRoute>,
 
-        loader:()=>fetch('http://localhost:5000/addCraft')
+        loader:()=>fetch('https://server-side-ruby-one.vercel.app/addCraft')
       },
       {
         path:'/allArt',
         element:<AllArt></AllArt>,
-        loader:()=>fetch('http://localhost:5000/addCraft')
+        loader:()=>fetch('https://server-side-ruby-one.vercel.app/addCraft')
       },
       {
         path:'/allArtDetails/:id',
         element:<PrivateRoute><AllArtDetails></AllArtDetails></PrivateRoute>,
-        loader:()=>fetch('http://localhost:5000/addCraft')
+        loader:()=>fetch('https://server-side-ruby-one.vercel.app/addCraft')
 
 
       },
       {
         path:'/craftItemtDetails/:id',
         element:<CraftItemDetails></CraftItemDetails>,
-        loader:()=>fetch('http://localhost:5000/addCraft')
+        loader:()=>fetch('https://server-side-ruby-one.vercel.app/addCraft')
 
 
       },
       {
         path:'/showCategory/:sub',
         element:<ShowCategory></ShowCategory>,
-        loader:()=>fetch('http://localhost:5000/addCraft')
+        loader:()=>fetch('https://server-side-ruby-one.vercel.app/addCraft')
       },
       {
         path:'/update/:id',
         element:<Update></Update>,
-        loader:({params})=>fetch(`http://localhost:5000/addCraft/${params.id}`)
+        loader:({params})=>fetch(`https://server-side-ruby-one.vercel.app/addCraft/${params.id}`)
       },
       
       {

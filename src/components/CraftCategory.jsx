@@ -8,7 +8,7 @@ const CraftCategory = () => {
     useEffect(() => {
         const fetchCraftCategoryData = async () => {
             try {
-                const response = await fetch('http://localhost:5000/showCraft');
+                const response = await fetch('https://server-side-ruby-one.vercel.app/showCraft');
                 if (!response.ok) {
                     throw new Error('Failed to fetch data');
                 }

@@ -27,7 +27,7 @@ const MyArtCard = ({ data }) => {
         cancelButtonText: 'No, cancel!'
     }).then((result) => {
         if (result.isConfirmed) {
-            fetch(`http://localhost:5000/addCraft/${_id}`, {
+            fetch(`https://server-side-ruby-one.vercel.app/addCraft/${_id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

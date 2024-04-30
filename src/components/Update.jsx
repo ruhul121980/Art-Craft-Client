@@ -10,7 +10,7 @@ export default function Update() {
         e.preventDefault();
         console.log(formData); 
 
-        fetch(`http://localhost:5000/addCraft/${loaderUser._id}`, {
+        fetch(`https://server-side-ruby-one.vercel.app/addCraft/${loaderUser._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
