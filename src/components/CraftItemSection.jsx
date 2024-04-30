@@ -14,7 +14,7 @@ export default function CraftItemSection() {
         );
     }
 
-    const limitedData = data.slice(0, 6); // Get the first 6 items from data
+    const limitedData = data.slice(0, 6); 
 
     return (
         <div className="container mx-auto">

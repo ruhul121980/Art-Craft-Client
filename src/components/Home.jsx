@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ThemeToggle from "./ThemeToggle"; // Import ThemeToggle component
+import ThemeToggle from "./ThemeToggle"; 
 import Slid from "./Slid"; 
 import CraftItemSection from "./CraftItemSection";
 import CraftCategory from "./CraftCategory";
@@ -16,7 +16,7 @@ export default function Home() {
 
   return (
     <div className={`bg-gray-100 dark:bg-gray-900 ${darkMode ? 'dark' : ''}`}>
-      <ThemeToggle /> {/* Use the ThemeToggle component */}
+      <ThemeToggle /> 
       <h2 className="text-2xl"></h2>
       <Slid />
       <div className="w-11/12 mx-auto">

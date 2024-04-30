@@ -13,9 +13,9 @@ export default function ShowCategory() {
         console.log("test true")
         return <ShowCategoryDetails key={data._id} data={data} />;
       }
-      return null; // Add this to handle non-matching categories
+      return null; 
     });
-    setRenderedCards(cards.filter(Boolean)); // Filter out null values
+    setRenderedCards(cards.filter(Boolean)); 
   }, [alldata, sub]);
 
   return (

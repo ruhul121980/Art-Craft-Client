@@ -7,10 +7,10 @@ const MyArt = () => {
   const { user } = useContext(AuthContext);
   const alldata = useLoaderData();
   const email = user.email;
-  const [customizationFilter, setCustomizationFilter] = useState('All'); // State to track the selected customization filter
+  const [customizationFilter, setCustomizationFilter] = useState('All'); 
   const [renderedCards, setRenderedCards] = useState([]);
 
-  // Filter data based on customization and user email
+  
   useEffect(() => {
     const filteredData = alldata.filter(data => {
       if (customizationFilter === 'All') {
@@ -27,7 +27,6 @@ const MyArt = () => {
     setRenderedCards(cards);
   }, [alldata, email, customizationFilter]);
 
-  // Handler function to update the filter value
   const handleFilterChange = (e) => {
     setCustomizationFilter(e.target.value);
   };

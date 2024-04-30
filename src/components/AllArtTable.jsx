@@ -27,7 +27,6 @@ export default function AllArtTable({ Art }) {
           <tr>
             <th style={{ width: "20%" }}>
               <label>
-                {/* Add any labels if needed */}
               </label>
             </th>
             <td style={{ width: "30%" }}>

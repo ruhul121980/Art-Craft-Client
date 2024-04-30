@@ -3,7 +3,7 @@ import CraftCategoryCard from './CraftCategoryCard';
 
 const CraftCategory = () => {
     const [craftCategoryData, setCraftCategoryData] = useState([]);
-    const [isLoading, setIsLoading] = useState(true); // State to track loading status
+    const [isLoading, setIsLoading] = useState(true); 
 
     useEffect(() => {
         const fetchCraftCategoryData = async () => {
@@ -14,11 +14,11 @@ const CraftCategory = () => {
                 }
                 const data = await response.json();
                 setCraftCategoryData(data);
-                setIsLoading(false); // Set loading to false when data is fetched
+                setIsLoading(false); 
                 console.log('success');
             } catch (error) {
                 console.error('Error fetching craft items:', error);
-                setIsLoading(false); // Set loading to false in case of error
+                setIsLoading(false); 
             }
         };
 
@@ -28,7 +28,7 @@ const CraftCategory = () => {
     return (
         <div className="container mx-auto px-4">
             <h2 className='text-center mt-8 font-bold text-5xl mb-8'>Craft Categories</h2>
-            {isLoading ? ( // Render loading spinner if data is still loading
+            {isLoading ? ( 
                 <div className="flex justify-center items-center h-64">
                     <span className="loading loading-spinner loading-lg"></span>
                 </div>
